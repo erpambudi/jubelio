@@ -1,16 +1,31 @@
 # jubelio
 
-A new Flutter project.
+## Installation
+Make sure your device/machine ready to run flutter, see more about flutter installation in [here](https://flutter.dev/docs/get-started/install).
 
-## Getting Started
+ 1. Clone this repo
+```bash
+git clone https://github.com/erpambudi/jubelio.git
+```
+ 2. Get required package
+```bash
+flutter pub get
+```
+## Additional information about this project
+ 
+This project using Flutter BLoc as State Management and implementing Clean Architecture
 
-This project is a starting point for a Flutter application.
+## Running Automation Testing
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ 1. Initial Coverage File
+```bash
+flutter test --coverage
+```
+ 2. Running Testing and Coverage
+```bash
+flutter pub run test_cov_console
+```
+3. If you experience an error during the test, try rebuilding the test in this way
+```bash
+flutter pub run build_runner build
+```
