@@ -29,3 +29,8 @@ flutter pub run test_cov_console
 ```bash
 flutter pub run build_runner build
 ```
+
+## About This Project
+<img src="https://user-images.githubusercontent.com/43690534/219957858-84385138-1f2c-4057-836d-0f1967f1d2e0.png" width="240" height="500"> <img src="https://user-images.githubusercontent.com/43690534/219958349-33ef6909-da43-400a-b47b-9044f6fdab72.png" width="240" height="500">
+
+
