@@ -4,6 +4,7 @@ import 'package:jubelio/data/datasources/remote/product_remote.dart';
 import 'package:jubelio/domain/repositories/cart_repository.dart';
 import 'package:jubelio/domain/repositories/product_repository.dart';
 import 'package:mockito/annotations.dart';
+import 'package:dio/dio.dart' as dio;
 
 @GenerateMocks(
   [
@@ -12,6 +13,9 @@ import 'package:mockito/annotations.dart';
     ProductLocal,
     DatabaseHelper,
     CartRepository
+  ],
+  customMocks: [
+    MockSpec<dio.Dio>(as: #MockDio),
   ],
 )
 void main() {}

@@ -1,4 +1,5 @@
 import 'package:jubelio/data/models/cart_table.dart';
+import 'package:jubelio/data/models/product.dart';
 import 'package:jubelio/data/models/product_cache.dart';
 import 'package:jubelio/domain/entities/cart.dart';
 import 'package:jubelio/domain/entities/product.dart';
@@ -14,6 +15,16 @@ const testProduct = Product(
 );
 
 final testProductsList = [testProduct];
+
+final testProductModel = ProductModel(
+  id: 186,
+  name: "Divi Ninja Tee",
+  price: "12.99",
+  shortDescription:
+      "<p>This comfortable cotton t-shirt features the Divi logo on the front and expresses your Ninja status with the theme. It is the perfect tee for any occasion.</p>\n",
+);
+
+final testProductsModelList = [testProductModel];
 
 // Cache
 const testCacheProduct = ProductCache(
@@ -33,6 +44,8 @@ const testCacheProductModel = ProductCacheModel(
   image:
       "https://codetesting.jubelio.store/wp-content/uploads/2022/11/Divi-Ninja.jpg",
 );
+
+final testCacheProductModelList = [testCacheProductModel];
 
 final testCacheProductMap = {
   "id": 186,
@@ -67,6 +80,18 @@ final testCartQuantityProduct = Cart(
   size: "Large",
 );
 
+const testCartQuantityModelProduct = CartTable(
+  id: 1,
+  idProduct: 186,
+  name: "Divi Ninja Tee",
+  price: "12.99",
+  quantity: 2,
+  image:
+      "https://codetesting.jubelio.store/wp-content/uploads/2022/11/Divi-Ninja.jpg",
+  brand: "Divi",
+  size: "Large",
+);
+
 final testCartProductList = [testCartProduct];
 
 const testCartProductModel = CartTable(
@@ -80,6 +105,8 @@ const testCartProductModel = CartTable(
   brand: "Divi",
   size: "Large",
 );
+
+final testCartProductModelList = [testCartProductModel];
 
 final testCartProductMap = {
   "id": 1,
