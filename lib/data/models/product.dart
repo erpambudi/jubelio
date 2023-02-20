@@ -151,9 +151,15 @@ class ProductModel {
         dateCreated: json["date_created"] != null
             ? DateTime.parse(json["date_created"])
             : null,
-        dateCreatedGmt: DateTime.parse(json["date_created_gmt"]),
-        dateModified: DateTime.parse(json["date_modified"]),
-        dateModifiedGmt: DateTime.parse(json["date_modified_gmt"]),
+        dateCreatedGmt: json["date_created_gmt"] != null
+            ? DateTime.parse(json["date_created_gmt"])
+            : null,
+        dateModified: json["date_modified"] != null
+            ? DateTime.parse(json["date_modified"])
+            : null,
+        dateModifiedGmt: json["date_modified_gmt"] != null
+            ? DateTime.parse(json["date_modified_gmt"])
+            : null,
         type: json["type"],
         status: json["status"],
         featured: json["featured"],
@@ -173,7 +179,9 @@ class ProductModel {
         totalSales: json["total_sales"],
         virtual: json["virtual"],
         downloadable: json["downloadable"],
-        downloads: List<dynamic>.from(json["downloads"].map((x) => x)),
+        downloads: json["downloads"] != null
+            ? List<dynamic>.from(json["downloads"].map((x) => x))
+            : null,
         downloadLimit: json["download_limit"],
         downloadExpiry: json["download_expiry"],
         externalUrl: json["external_url"],
@@ -188,7 +196,9 @@ class ProductModel {
         lowStockAmount: json["low_stock_amount"],
         soldIndividually: json["sold_individually"],
         weight: json["weight"],
-        dimensions: DimensionsModel.fromJson(json["dimensions"]),
+        dimensions: json["dimensions"] != null
+            ? DimensionsModel.fromJson(json["dimensions"])
+            : null,
         shipping: json["shipping_"],
         shippingTaxable: json["shipping_taxable"],
         shippingClass: json["shipping_class"],
@@ -196,31 +206,52 @@ class ProductModel {
         reviewsAllowed: json["reviews_allowed"],
         averageRating: json["average_rating"],
         ratingCount: json["rating_count"],
-        upsellIds: List<dynamic>.from(json["upsell_ids"].map((x) => x)),
-        crossSellIds: List<dynamic>.from(json["cross_sell_ids"].map((x) => x)),
+        upsellIds: json["upsell_ids"] != null
+            ? List<dynamic>.from(json["upsell_ids"].map((x) => x))
+            : null,
+        crossSellIds: json["cross_sell_ids"] != null
+            ? List<dynamic>.from(json["cross_sell_ids"].map((x) => x))
+            : null,
         parentId: json["parent_id"],
         purchaseNote: json["purchase_note"],
-        categories: List<CategoryModel>.from(
-            json["categories"].map((x) => CategoryModel.fromJson(x))),
-        tags: List<dynamic>.from(json["tags"].map((x) => x)),
-        images: List<ImageModel>.from(
-            json["images"].map((x) => ImageModel.fromJson(x))),
-        attributes: List<AttributeModel>.from(
-            json["attributes"].map((x) => AttributeModel.fromJson(x))),
-        defaultAttributes: List<DefaultAttributeModel>.from(
-            json["default_attributes"]
-                .map((x) => DefaultAttributeModel.fromJson(x))),
-        variations: List<int>.from(json["variations"].map((x) => x)),
-        groupedProducts:
-            List<dynamic>.from(json["grouped_products"].map((x) => x)),
+        categories: json["categories"] != null
+            ? List<CategoryModel>.from(
+                json["categories"].map((x) => CategoryModel.fromJson(x)))
+            : null,
+        tags: json["tags"] != null
+            ? List<dynamic>.from(json["tags"].map((x) => x))
+            : null,
+        images: json["images"] != null
+            ? List<ImageModel>.from(
+                json["images"].map((x) => ImageModel.fromJson(x)))
+            : null,
+        attributes: json["attributes"] != null
+            ? List<AttributeModel>.from(
+                json["attributes"].map((x) => AttributeModel.fromJson(x)))
+            : null,
+        defaultAttributes: json["default_attributes"] != null
+            ? List<DefaultAttributeModel>.from(json["default_attributes"]
+                .map((x) => DefaultAttributeModel.fromJson(x)))
+            : null,
+        variations: json["variations"] != null
+            ? List<int>.from(json["variations"].map((x) => x))
+            : null,
+        groupedProducts: json["grouped_products"] != null
+            ? List<dynamic>.from(json["grouped_products"].map((x) => x))
+            : null,
         menuOrder: json["menu_order"],
         priceHtml: json["price_html"],
-        relatedIds: List<int>.from(json["related_ids"].map((x) => x)),
-        metaData: List<MetaDataModel>.from(
-            json["meta_data"].map((x) => MetaDataModel.fromJson(x))),
+        relatedIds: json["related_ids"] != null
+            ? List<int>.from(json["related_ids"].map((x) => x))
+            : null,
+        metaData: json["meta_data"] != null
+            ? List<MetaDataModel>.from(
+                json["meta_data"].map((x) => MetaDataModel.fromJson(x)))
+            : null,
         stockStatus: json["stock_status"],
         hasOptions: json["has_options"],
-        links: LinksModel.fromJson(json["_links"]),
+        links:
+            json["_links"] != null ? LinksModel.fromJson(json["_links"]) : null,
       );
 
   Map<String, dynamic> toJson() => {
@@ -379,20 +410,27 @@ class ProductModel {
       crossSellIds: crossSellIds,
       parentId: parentId,
       purchaseNote: purchaseNote,
-      categories: categories!.map((e) => e.toEntity()).toList(),
+      categories: categories != null
+          ? categories!.map((e) => e.toEntity()).toList()
+          : null,
       tags: tags,
-      images: images!.map((e) => e.toEntity()).toList(),
-      attributes: attributes!.map((e) => e.toEntity()).toList(),
-      defaultAttributes: defaultAttributes!.map((e) => e.toEntity()).toList(),
+      images: images != null ? images!.map((e) => e.toEntity()).toList() : null,
+      attributes: attributes != null
+          ? attributes!.map((e) => e.toEntity()).toList()
+          : null,
+      defaultAttributes: defaultAttributes != null
+          ? defaultAttributes!.map((e) => e.toEntity()).toList()
+          : null,
       variations: variations,
       groupedProducts: groupedProducts,
       menuOrder: menuOrder,
       priceHtml: priceHtml,
       relatedIds: relatedIds,
-      metaData: metaData!.map((e) => e.toEntity()).toList(),
+      metaData:
+          metaData != null ? metaData!.map((e) => e.toEntity()).toList() : null,
       stockStatus: stockStatus,
       hasOptions: hasOptions,
-      links: links!.toEntity(),
+      links: links != null ? links!.toEntity() : null,
     );
   }
 }
